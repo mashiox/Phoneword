@@ -1,0 +1,23 @@
+#!/bin/bash
+
+disp_help(){
+	echo "Uage: $0 [ -h | integer ]"
+	echo 
+	echo "-h		Display this help"
+	echo 
+	echo "integer	A phone number of arbitrary length"
+	echo
+	exit 1
+}
+
+case "$1" in
+	-h | --help)
+		disp_help
+		exit 0
+		;;
+esac
+
+for arg in "$@"
+do
+    python main.py "$arg"
+done
