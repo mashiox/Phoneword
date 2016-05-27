@@ -5,8 +5,8 @@ import getopt
 def main():
     try:
         opts, args = getopt.getopt( sys.argv[1 : ], "h", ["help"] )
-    except getopt.error, msg:
-        print( msg )
+    except getopt.error as err:
+        print( err )
         return 2
     
     for arg in args:
